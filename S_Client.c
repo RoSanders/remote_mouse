@@ -59,7 +59,12 @@ int main() {
 	//print data given from server
 	printf("The server sent the data: %s\n", server_response);
 	
-	//
+	//TBA, puts data into text file
+	FILE *rp;
+	rp= fopen("data.txt", "w");
+		fputs(server_response, rp);
+	fclose(rp);	
+	
 	write_fd(socket);
 	close(socket);
 	return 0;
